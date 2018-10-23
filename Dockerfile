@@ -7,4 +7,6 @@ RUN apt-get -y install nginx
 RUN echo '<marquee>Hello Arsys!!!</marquee>' \
     > /var/www/html/index.html
 
+RUN apt-get update
+
 EXPOSE 80
