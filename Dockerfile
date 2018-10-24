@@ -19,4 +19,4 @@ RUN usermod -aG root robertogc
 
 USER robertogc
 
-#ENTRYPOINT ["nginx","-g daemon off;"]
+VOLUME ["/my-data"]
