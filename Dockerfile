@@ -1,6 +1,8 @@
 FROM ubuntu:18.10
 MAINTAINER rgcordon@arsys.es
 
+RUN useradd robertogc
+
 RUN apt-get update
 RUN apt-get -y install nginx
 
@@ -11,6 +13,10 @@ RUN apt-get update
 
 EXPOSE 80
 
-WORKDIR /var/www/html
+ENV DATABASE_IP 192.167.2.9
 
-ENTRYPOINT ["nginx","-g daemon off;"]
+RUN usermod -aG root robertogc
+
+USER robertogc
+
+#ENTRYPOINT ["nginx","-g daemon off;"]
